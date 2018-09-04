@@ -3,12 +3,13 @@ package main
 import (
 	"flag"
 	"log"
+	"os"
 	"os/exec"
 	"strings"
 )
 
-const (
-	TARGET_DIR = "~/IdeaProjects/"
+var (
+	TARGET_DIR = os.Getenv("HOME") + "/IdeaProjects/"
 )
 
 func main() {
@@ -18,7 +19,7 @@ func main() {
 	cmd := exec.Command("unzip", "-a", zip, "-d", TARGET_DIR)
 	err := cmd.Run()
 	if err != nil {
-		log.Println("non zero exist code but we proceed anyway..", err)
+		log.Fatalln("non zero exist code while extract..", err)
 	}
 
 	exec.Command("idea", TARGET_DIR+strings.Split(zip, ".")[0]+"/pom.xml").Run()
