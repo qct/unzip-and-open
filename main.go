@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	TARGET_DIR = "~/Downloads/"
+	TARGET_DIR = "~/IdeaProjects/"
 )
 
 func main() {
