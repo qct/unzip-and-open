@@ -1,1 +1,1 @@
-# A Simple Python Program to Unzip and Open Projects in IntellIJ
+# A Simple Go Program to Unzip and Open Projects in IntellIJ
